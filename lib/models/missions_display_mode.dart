@@ -1,0 +1,4 @@
+enum MissionsDisplayMode{
+  listView,
+  gridView,
+}
