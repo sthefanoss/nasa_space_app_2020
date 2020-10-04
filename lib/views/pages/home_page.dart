@@ -3,8 +3,8 @@ import 'package:apollomissionsapp/models/missions_display_mode.dart';
 import 'package:apollomissionsapp/models/mission.dart';
 import 'package:apollomissionsapp/resources/images.dart';
 import 'package:apollomissionsapp/views/widgets/glass_button.dart';
-import 'package:apollomissionsapp/views/widgets/mission_tile.dart';
-import 'package:apollomissionsapp/views/widgets/missions_list.dart';
+import 'package:apollomissionsapp/views/widgets/custom_grid_tile.dart';
+import 'package:apollomissionsapp/views/widgets/custom_grid_view.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -25,39 +25,39 @@ class HomePage extends StatelessWidget {
                     Container(
                       width: MediaQuery.of(context).size.width / 2.5,
                       height: MediaQuery.of(context).size.width / 2.5,
-                      child: Image.asset(ResourceImages.apollo_09_A),
+                      child: Image.asset(ResourceImages.logo),
                     ),
                     Padding(
                       padding: EdgeInsets.only(top: 16, bottom: 48),
                       child: Text(
-                        'NOME DO APP',
+                        'Hermes',
                         textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                          fontStyle: FontStyle.italic,
+                        ),
                       ),
                     ),
                   ],
                 ),
               ),
-
               GlassButton(
-                label: "Programa Apollo",
-                onTap: () =>
-                    Navigator.of(context).pushNamed('/missions/apollo'),
+                label: "Nasa History",
+                onTap: () => Navigator.of(context).pushNamed('/nasa-history'),
               ),
               GlassButton(
-                label: "Programa Artemis",
-                onTap: () =>
-                    Navigator.of(context).pushNamed('/missions/artemis'),
+                label: "Programs",
+                onTap: () => Navigator.of(context).pushNamed('/programs'),
               ),
               GlassButton(
-                label: "Nasa Space Apps",
+                label: "Imagem do Dia",
                 onTap: () =>
-                    Navigator.of(context).pushNamed('/nasa-space-apps'),
+                    Navigator.of(context).pushNamed('/image-of-the-day'),
               ),
               GlassButton(
-                label: "Sobre",
-                onTap: () =>
-                    Navigator.of(context).pushNamed('/about'),
+                label: "About",
+                onTap: () => Navigator.of(context).pushNamed('/about'),
               ),
             ],
           ),
@@ -66,5 +66,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
-

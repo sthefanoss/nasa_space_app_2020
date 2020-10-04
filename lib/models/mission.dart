@@ -1,13 +1,19 @@
 class Mission {
-  final int id;
   final String name;
+  final String title;
   final String description;
-  final String imagePath;
+  final String logoImagePath;
+  final String headerImagePath;
+  final String footerImagePath;
+  final List<String> referencesUrls;
 
   const Mission({
-    this.id,
     this.name,
+    this.title,
     this.description,
-    this.imagePath,
+    this.logoImagePath,
+    this.headerImagePath,
+    this.footerImagePath,
+    this.referencesUrls,
   });
 }
