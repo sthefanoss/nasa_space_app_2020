@@ -22,9 +22,13 @@ class _ImageOfTheDayPageState extends State<ImageOfTheDayPage> {
   void initState() {
     Dio().get(
       "https://api.nasa.gov/planetary/apod",
-      queryParameters: {"api_key": "gchjGh7x7nuzdck1QlHIpYmIWZwFJsRKVeykMASN"},
+      queryParameters: {
+        "api_key": "gchjGh7x7nuzdck1QlHIpYmIWZwFJsRKVeykMASN",
+        "date": "2020-10-04",
+      },
     ).then((response) {
       if (response.data == null) return;
+      print(response);
 
       setState(() {
         _imageOfTheDay = ImageOfTheDay.fromMap(response.data);
@@ -58,31 +62,30 @@ class _ImageOfTheDayPageState extends State<ImageOfTheDayPage> {
                     ),
                   ),
                   PopupNetworkImage(_imageOfTheDay.url),
-
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(top: 16, bottom: 32),
-                  child: Text(
-                   '${_imageOfTheDay.copyright}, ${_imageOfTheDay.date}',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(top: 16, bottom: 32),
+                        child: Text(
+                          '${_imageOfTheDay.copyright}, ${_imageOfTheDay.date}',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 8),
+                      Text(
+                        _imageOfTheDay.explanation,
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
+                          fontSize: 15,
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-                SizedBox(height: 8),
-                Text(
-              _imageOfTheDay.explanation,
-                  textAlign: TextAlign.justify,
-                  style: TextStyle(
-                    fontSize: 15,
-                  ),
-                ),
-              ],
-            ),
                 ],
               ),
       ),

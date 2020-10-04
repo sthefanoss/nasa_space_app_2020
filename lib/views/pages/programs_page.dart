@@ -19,7 +19,7 @@ class _ProgramsPageState extends State<ProgramsPage> {
     return Scaffold(
       backgroundColor: Color(0xFF1E1D1D),
       appBar: AppBar(
-        title: Text("Programs"),
+        title: Text("Programas"),
         actions: [
           IconButton(
             icon: Icon(

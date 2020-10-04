@@ -43,11 +43,11 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               GlassButton(
-                label: "Nasa History",
+                label: "História da Nasa",
                 onTap: () => Navigator.of(context).pushNamed('/nasa-history'),
               ),
               GlassButton(
-                label: "Programs",
+                label: "Programas",
                 onTap: () => Navigator.of(context).pushNamed('/programs'),
               ),
               GlassButton(
@@ -56,7 +56,7 @@ class HomePage extends StatelessWidget {
                     Navigator.of(context).pushNamed('/image-of-the-day'),
               ),
               GlassButton(
-                label: "About",
+                label: "Sobre",
                 onTap: () => Navigator.of(context).pushNamed('/about'),
               ),
             ],
